@@ -1,16 +1,11 @@
-# This is a sample Python script.
+from data_preparation import DataManipulation
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+data_manip = DataManipulation()
+# We read the dataset
+dataset_train, dataset_test = data_manip.read_data()
+# We prepare the data used for the training
+images = data_manip.prep_data(dataset_train)
+# We plot an image number_to_plot
+number_to_plot = 10
+# data_manip.display_image(images[number_to_plot])
+data_manip.numeric_2_vectors_labels(dataset_train)
